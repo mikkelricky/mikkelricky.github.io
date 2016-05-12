@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+		<title>Test - Macros</title>
+
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+				tex2jax: {
+      		inlineMath: [ [ '$','$' ], [ '\\(', '\\)' ] ],
+					displayMath: [ [ '\\[', '\\]'] ],
+					processEscapes: true,
+          processEnvironments: false
+				},
+				delayStartupUntil: 'onload'
+			});
+		</script>
+		<!-- <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+		<script type="text/javascript" src="http://mikkelricky/javascripts/mathjax/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<script type="text/javascript" src="../mathjax-macros.js"></script>
+	</head>
+	<body>
+		<h1>Test - Macros</h1>
+
+		<h2>\nuclide</h2>
+
+		<p>\[ \nuclide[14][6]{C} \quad \nuclide[4][2]{\alpha} \]</p>
+		<p>\[ \nuclide{C} \quad \nuclide[2]{C} \quad \nuclide[][2]{C} \]</p>
+
+		<p>
+			$ \degree $
+			\[ 10 \degree \degrees \]
+
+			\[\begin{aligned}
+1 \\
+2 \\
+3 \\
+4 \\
+5 \\
+6 \\
+7 \\
+8 \\
+9 \\
+0 \\
+			1234567890 \\
+			\phantom{1}234567890 \\
+			\end{aligned}\]
+		</p>
+
+	</body>
+</html>

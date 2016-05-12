@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+		<title>Interactive MathJax</title>
+
+<!--		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.3.0/build/cssreset/reset-min.css&amp;3.3.0/build/cssgrids/grids-min.css&amp;3.3.0/build/cssfonts/fonts-min.css"/>-->
+		<style type="text/css">
+body {
+padding: 1em;
+}
+			fieldset {
+			padding: 1em;
+			}
+#input, #display {
+			width: 100%;
+			border: solid 1px #0f0f0f;
+			background: #ffa;
+			padding: .5em;
+}
+		</style>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+				tex2jax: {
+      		inlineMath: [ [ '$','$' ], [ '\\(', '\\)' ] ],
+					displayMath: [ [ '\\[', '\\]'] ],
+					processEscapes: true,
+          processEnvironments: false
+				},
+        TeX: {
+	        extensions: [ 'autobold.js', 'mhchem.js' ]
+	      },
+	      menuSettings: {
+          zoom: 'Hover'
+	      },
+	      messageStyle: 'normal',
+				delayStartupUntil: 'onload'
+			});
+
+      // @see http://www.mathjax.org/docs/2.0/tex.html
+      MathJax.Hub.Register.StartupHook("TeX Jax Ready", function() {
+        MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros, {
+          cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+          xcancel: ["Extension","cancel"],
+          cancelto: ["Extension","cancel"]
+        });
+      });
+		</script>
+		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS_HTML"></script>
+		<script type="text/javascript" src="mathjax-macros.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="interactive.js"></script>
+	</head>
+	<body class="tex2jax_ignore">
+		<h1>Interactive MathJax</h1>
+
+		<div class="yui3-g">
+			<div class="yui3-u-1-2">
+				<fieldset>
+					<legend>Input</legend>
+					<div>
+						<textarea id="input" name="input" rows="10" cols="80"></textarea>
+					</div>
+				</fieldset>
+			</div>
+			<div class="yui3-u-1-2">
+				<fieldset>
+					<legend>Output</legend>
+
+					<div id="display"></div>
+				</fieldset>
+			</div>
+		</div>
+
+	</body>
+</html>
